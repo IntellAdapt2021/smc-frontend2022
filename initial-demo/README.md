@@ -2,7 +2,7 @@
 
 ### Installation
 
-Loginapp requires [Node.js](https://nodejs.org/) v4+ to run.
+Requires [Node.js](https://nodejs.org/) v4+ to run.
 
 ```sh
 $ npm install
