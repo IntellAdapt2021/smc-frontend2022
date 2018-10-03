@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>register1</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="i/icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="shortcut icon" href="i/favicon.ico" />
+	<!-- 60x60//-->
+	<!-- https://msdn.microsoft.com/en-us/library/dn455106(v=vs.85).aspx -->
+	<meta name="msapplication-config" content="tile.xml" />
+	<meta name="application-name" content="tiletext" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/001.css?0704c" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/001.js"></script>
+</head>
+<body>
+	<!--[if lte IE 9]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p> <![endif]-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center"><img src="i/p2p_logo_360w.png" alt="Power2Peer" width="360" height="107" />
+				</h1>
+				<!-- <h3>Login or <a href="#">Sign up</a></h3> -->
+				<section>
+					<h1>Register (Home) - slide5</h1>
+					<p>Are you an energy producer or consumer?</p>
+					<div class="form-group">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Utype" id="Utype1" value="option1" checked>
+							<label class="form-check-label" for="Utype1">
+								Producer
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Utype" id="Utype2" value="option2">
+							<label class="form-check-label" for="Utype2">
+								Consumer
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Utype" id="Utype3" value="option3">
+							<label class="form-check-label" for="Utype3">
+								Both
+							</label>
+						</div>
+					</div>
+					<!-- <p>xxx</p> -->
+					<div class="form-group">
+						<label for="Location">Your location</label>
+						<select id="Location" class="form-control">
+							<option selected>Choose...</option>
+							<option>...</option>
+						</select>
+					</div>
+					<p>What type of account?</p>
+					<div class="form-group">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Atype" id="Atype1" value="option1" checked>
+							<label class="form-check-label" for="Atype1">
+								Home Owner
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Atype" id="Atype2" value="option2">
+							<label class="form-check-label" for="Atype2">
+								Business
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="Atype" id="Atype3" value="option3">
+							<label class="form-check-label" for="Atype3">
+								Apartment
+							</label>
+						</div>
+					</div>
+					<p>Energy Preferences</p>
+					<p>Price range:
+						<input type="text" size="5" placeholder="low" />&nbsp;to
+						<input type="text" size="5" placeholder="high" />
+					</p>
+					<div class="form-group">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="EPtype" id="EPtype1" value="option1" checked>
+							<label class="form-check-label" for="EPtype1">
+								Always Cheapest
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="EPtype" id="EPtype2" value="option2">
+							<label class="form-check-label" for="EPtype2">
+								Always Greenest
+							</label>
+						</div>
+						<div class="form-group">
+							<label for="SAN">Service Account Number</label>
+							<input type="text" class="form-control" id="SAN" placeholder="Service Account Number">
+						</div>
+						<div class="form-group">
+							<label for="IDensure">Last 4 digits of SSN or Tax ID Number</label>
+							<input type="text" class="form-control" id="IDensure" placeholder="Last 4 digits of SSN or Tax ID Number">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="PPM">Preferred Payment Method</label>
+						<select id="PPM" class="form-control">
+							<option selected>Choose...</option>
+							<option>Bank Account</option>
+							<option>Credit Card</option>
+							<option>Automated Payment</option>
+							<option>Coinbase Account</option>
+							<option>Create Coinbase Account</option>
+							<option>MyEtherWallet</option>
+							<option>Create MyEtherWallet</option>
+						</select>
+					</div>
+					<div class="form-group mt-3 text-center">
+						<!-- <button type="submit" class="btn btn-block btn-lg btn-primary">Submit</button> -->
+						<a href="#" class="btn btn-block btn-lg btn-primary">Submit</a>
+					</div>
+				</section>
+
+			</div>
+		</div>
+	</div>
+
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script>
+	window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.slim.min.js"><\/script>')
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

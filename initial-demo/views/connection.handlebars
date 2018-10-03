@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Producer Microgrid Status Page - slide 14</h1>
+            <p><button id="t-cb">toggle colorblind</button></p>
+            <link href="/css/003-led.css?0704c" rel="stylesheet" type="text/css" />
+            <section>
+                <div class="row microgrid3">
+                    <div class="col mg-container">
+                        <div class="mg-outer">
+                            <span class="solar s-nw"><i class="led working"></i><span class="sr-only">solar</span></span>
+                            <span class="solar s-ne"><i class="led repair blink"></i><span class="sr-only">solar</span></span>
+                            <span class="solar s-se"><i class="led down blink"></i><span class="sr-only">solar</span></span>
+                            <span class="solar s-sw"><i class="led null off"></i><span class="sr-only">solar</span></span>
+                            <div class="mg-mid">
+                                <span class="mgrid m-nw"><i class="led working"></i><span class="sr-only">mgrid</span></span>
+                                <span class="mgrid m-ne"><i class="led working"></i><span class="sr-only">mgrid</span></span>
+                                <span class="mgrid m-se"><i class="led working"></i><span class="sr-only">mgrid</span></span>
+                                <span class="mgrid m-sw"><i class="led working"></i><span class="sr-only">mgrid</span></span>
+                                <div class="mg-inner">
+                                    <span class="junction-box"><i class="led working"></i><span class="sr-only">jbox</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row microgrid -->
+                <!-- end row -->
+            </section>
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+</div>
+<!-- end container -->
+<script>
+    // toggle led blink, click any led to toggle
+    function toggleItem(elem) {
+        for (var i = 0; i < elem.length; i++) {
+        elem[i].addEventListener("click", function(e) {
+            var current = this;
+            for (var i = 0; i < elem.length; i++) {
+            if (current != elem[i]) {
+                elem[i].classList.remove('blink');
+            } else if (current.classList.contains('blink') === true) {
+                current.classList.remove('blink');
+            } else {
+                current.classList.add('blink')
+            }
+            }
+            e.preventDefault();
+        });
+        };
+    }
+    toggleItem(document.querySelectorAll('.led'));
+    
+</script>

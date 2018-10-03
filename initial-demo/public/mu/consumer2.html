@@ -1,0 +1,150 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>consumer2</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="i/icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="shortcut icon" href="i/favicon.ico" />
+	<!-- 60x60//-->
+	<!-- https://msdn.microsoft.com/en-us/library/dn455106(v=vs.85).aspx -->
+	<meta name="msapplication-config" content="tile.xml" />
+	<meta name="application-name" content="tiletext" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/001.css?0704c" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/001.js"></script>
+</head>
+<body>
+	<!--[if lte IE 9]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security. <![endif]-->
+	<nav class="navbar navbar-expand navbar-light bg-light">
+		<a class="navbar-brand" href="home.html"><img src="i/p2p_logo-shape.png" alt="Power2Peer" style="max-height:48px;" />
+		</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item dropdown mode">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				          Mode
+				        </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="consumer1.html">Consumer&#x2001;&#x2714;</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="producer1.html">Producer</a>
+						<!-- <div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a> -->
+					</div>
+				</li>
+				<li class="nav-item active"> <a class="nav-link" href="consumer2.html">Battery <span class="sr-only">(current)</span></a>
+				</li>
+				<!-- <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a> </li> -->
+				<li class="nav-item"> <a class="nav-link" href="consumer3.html">Community</a>
+				</li>
+				<li class="nav-item"> <a class="nav-link" href="consumer4.html">Forum</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- end navbar -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h1>Consumer Battery Page - slide 11</h1>
+				<section>
+					<div class="row">
+						<div class="col-8">Battery Reserve Level</div>
+						<div class="col-4">%</div>
+					</div>
+					<div class="row">
+						<div class="col-8">Time left until depleted</div>
+						<div class="col-4">xx:xx</div>
+					</div>
+					<div class="row">
+						<div class="col-8">Time left until charged</div>
+						<div class="col-4">xx:xx</div>
+					</div>
+					<div class="row">
+						<div class="col-4">Charge from</div>
+						<div class="col-8">
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="Spanels" value="option1">
+								<label class="form-check-label" for="Spanels">Solar Panels</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="Egrid" value="option2">
+								<label class="form-check-label" for="Egrid">Electric Grid</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<p class="text-center">Switch to battery power</p>
+						</div>
+						<!-- not sure if this is the only place we need these switches -->
+						<link href="css/002-cantoggle.css?0704c" rel="stylesheet" type="text/css" />
+					</div>
+					<div class="row">
+						<div class="col-8">HVAC</div>
+						<div class="col-4">
+							<div class="can-toggle demo-rebrand-2">
+								<input id="HVAC" type="checkbox">
+								<label for="HVAC">
+									<div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+									<!-- <div class="can-toggle__label-text">.can-toggle.demo-rebrand-2</div> -->
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-8">Electric Car</div>
+						<div class="col-4">
+							<div class="can-toggle demo-rebrand-2">
+								<input id="Ecar" type="checkbox">
+								<label for="Ecar">
+									<div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+									<!-- <div class="can-toggle__label-text">.can-toggle.demo-rebrand-2</div> -->
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-8">Water Heater</div>
+						<div class="col-4">
+							<div class="can-toggle demo-rebrand-2">
+								<input id="Wheater" type="checkbox">
+								<label for="Wheater">
+									<div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+									<!-- <div class="can-toggle__label-text">.can-toggle.demo-rebrand-2</div> -->
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-8">Other</div>
+						<div class="col-4">
+							<div class="can-toggle demo-rebrand-2">
+								<input id="other" type="checkbox">
+								<label for="other">
+									<div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+									<!-- <div class="can-toggle__label-text">.can-toggle.demo-rebrand-2</div> -->
+								</label>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!-- end col -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script>
+	window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.slim.min.js"><\/script>')
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

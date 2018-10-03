@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>main/first</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="i/icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="shortcut icon" href="i/favicon.ico" />
+	<!-- 60x60//-->
+	<!-- https://msdn.microsoft.com/en-us/library/dn455106(v=vs.85).aspx -->
+	<meta name="msapplication-config" content="tile.xml" />
+	<meta name="application-name" content="tiletext" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/001.css?0704c" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/001.js"></script>
+</head>
+<body>
+	<!--[if lte IE 9]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p> <![endif]-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center"><img src="i/p2p_logo_360w.png" alt="Power2Peer" width="360" height="107" />
+				</h1>
+				<!-- <h3>Login or <a href="#">Sign up</a></h3> -->
+
+				<ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+					<section class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+						<div class="form-group">
+							<label for="username1">Username</label>
+							<input type="username" class="form-control" id="username1" placeholder="Enter username">
+						</div>
+						<div class="form-group">
+							<label for="password1">Password</label>
+							<input type="password" class="form-control" id="password1" placeholder="Enter password">
+						</div>
+						<div class="form-check">
+							<div class="row">
+								<div class="col">
+									<input type="checkbox" class="form-check-input" id="rememberCheck1" value="remember-me">
+									<label class="form-check-label" for="rememberCheck1">Remember Me</label>
+								</div>
+								<div class="col text-right"><a href="#">Forgot password?</a>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mt-3 text-center">
+							<!-- <button type="submit" class="btn btn-block btn-lg btn-primary">Login</button> -->
+							<a href="home.html" class="btn btn-block btn-lg btn-primary">Login</a>
+						</div>
+					</section>
+					<section class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+						<div class="form-row">
+							<div class="col">
+								<label for="Fname">First Name</label>
+								<input type="text" class="form-control" id="Fname" placeholder="Enter first name">
+							</div>
+							<div class="col">
+								<label for="Lname">Last Name</label>
+								<input type="text" class="form-control" id="Lname" placeholder="Enter last name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="Uname">Username</label>
+							<input type="text" class="form-control" id="Uname" placeholder="Enter username">
+						</div>
+						<div class="form-group">
+							<label for="Password2">Password</label>
+							<input type="password" class="form-control" id="Password2" placeholder="Enter password">
+						</div>
+						<div class="form-group">
+							<label for="Password2c">Confirm Password</label>
+							<input type="password" class="form-control" id="Password2c" placeholder="Confirm password">
+						</div>
+						<div class="form-group">
+							<label for="SecQuestion">Security Question</label>
+							<select id="SecQuestion" class="form-control">
+								<option selected>Choose...</option>
+								<option>...</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="SecAnswer">Security Question Answer</label>
+							<input type="text" class="form-control" id="SecAnswer" placeholder="Enter answer for security question">
+						</div>
+						<img src="https://developers.google.com/recaptcha/images/newCaptchaAnchor.gif" alt="" class="img-fluid" />
+						<div class="form-group mt-3 text-center">
+							<!-- <button type="submit" class="btn btn-block btn-lg btn-primary">Register</button> -->
+							<a href="register1.html" class="btn btn-block btn-lg btn-primary">Register</a>
+						</div>
+					</section>
+					<section class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
+						<p class="text-center">Login using:</p>
+						<div class="row text-center">
+							<div class="col"><a href="#"><img src="i/fb_325.png" alt="FaceBook" width="64" height="64" />Facebook</a></div>
+							<div class="col"><a href="#"><img src="i/coinbase_96.png" alt="Coinbase" width="64" height="64" />Coinbase</a></div>
+							<div class="col"><a href="#"><img src="i/MEW_180.png" alt="MyEtherWallet" width="64" height="64" />MyEtherWallet</a></div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script>
+	window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.slim.min.js"><\/script>')
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

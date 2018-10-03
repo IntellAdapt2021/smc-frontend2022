@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>consumer1billpay</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="i/icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="shortcut icon" href="i/favicon.ico" />
+	<!-- 60x60//-->
+	<!-- https://msdn.microsoft.com/en-us/library/dn455106(v=vs.85).aspx -->
+	<meta name="msapplication-config" content="tile.xml" />
+	<meta name="application-name" content="tiletext" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/001.css?0704c" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/001.js"></script>
+</head>
+<body>
+	<!--[if lte IE 9]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p> <![endif]-->
+	<nav class="navbar navbar-expand navbar-light bg-light">
+		<a class="navbar-brand" href="home.html"><img src="i/p2p_logo-shape.png" alt="Power2Peer" style="max-height:48px;" />
+		</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item dropdown mode">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				          Mode
+				        </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="consumer1.html">Consumer&#x2001;&#x2714;</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="producer1.html">Producer</a>
+						<!-- <div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a> -->
+					</div>
+				</li>
+				<li class="nav-item"> <a class="nav-link" href="consumer2.html">Battery</a>
+				</li>
+				<!-- <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a>
+				</li> -->
+				<li class="nav-item"> <a class="nav-link" href="consumer3.html">Community</a>
+				</li>
+				<li class="nav-item"> <a class="nav-link" href="consumer4.html">Forum</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- end navbar -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h1>Consumer Pay Page - slide 9</h1>
+				<section>
+					<div class="row">
+						<div class="col-8">Total Amount Due:</div>
+						<div class="col-4">$xxx.xx</div>
+					</div>
+				</section>
+				<section>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-8">
+								<label for="Pamount">Payment Amount:</label>
+							</div>
+							<div class="col-4">$
+								<input type="number" min="0" max="9999" step="0.01" size="4" title="CDA Currency Format - no dollar sign and no comma(s) - cents (.##) are optional" name="" class="" id="Pamount" />
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-8">
+								<label for="Pdate">Payment Date:</label>
+							</div>
+							<div class="col-4">
+								<input type="date" value="1776-12-31" name="" class="" id="Pdate">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-8">
+								<label for="Pmethod">Payment Method:</label>
+							</div>
+							<div class="col-4">
+								<select name="" class="form-control" id="Pmethod">
+									<option selected>Choose...</option>
+									<option>Saved Account</option>
+									<option>New Bank Account</option>
+									<option>New Credit Card Account</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<p><!-- <button class="btn btn-secondary float-right">change</button> --><a href="#" class="btn btn-secondary float-right">change?</a>Eletrotoken Wallet ID:<br /><span>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></p>
+							<p><!-- <button class="btn btn-secondary float-right">change</button> --><a href="#" class="btn btn-secondary float-right">change</a>Send payment confirmation to:<br /><span>registered@email.com</span></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<p class="text-right"><a href="#" class="btn btn-lg btn-primary">Submit Payment</a>
+							</p>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!-- end col -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script>
+	window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.slim.min.js"><\/script>')
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+	// show/hide video
+	$(document).ready(function() {
+
+		$("#eytv").hide();
+		$("#eyt").show();
+
+		$('#eyt').click(function() {
+			$("#eytv").toggle();
+			return false;
+		});
+
+	});
+	</script>
+</body>
+</html>

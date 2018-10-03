@@ -1,0 +1,338 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>consumer1stats</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="i/icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="shortcut icon" href="i/favicon.ico" />
+	<!-- 60x60//-->
+	<!-- https://msdn.microsoft.com/en-us/library/dn455106(v=vs.85).aspx -->
+	<meta name="msapplication-config" content="tile.xml" />
+	<meta name="application-name" content="tiletext" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/001.css?0704c" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/001.js"></script>
+</head>
+<body>
+	<!--[if lte IE 9]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p> <![endif]-->
+	<nav class="navbar navbar-expand navbar-light bg-light">
+		<a class="navbar-brand" href="home.html"><img src="i/p2p_logo-shape.png" alt="Power2Peer" style="max-height:48px;" />
+		</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item dropdown mode">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				          Mode
+				        </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="consumer1.html">Consumer&#x2001;&#x2714;</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="producer1.html">Producer</a>
+						<!-- <div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a> -->
+					</div>
+				</li>
+				<li class="nav-item"> <a class="nav-link" href="consumer2.html">Battery</a>
+				</li>
+				<!-- <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a>
+				</li> -->
+				<li class="nav-item"> <a class="nav-link" href="consumer3.html">Community</a>
+				</li>
+				<li class="nav-item"> <a class="nav-link" href="consumer4.html">Forum</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- end navbar -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h1>Customer Statistics Page - slide 10</h1>
+				<section>
+					<ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="day-tab" data-toggle="tab" href="#day" role="tab" aria-controls="day" aria-selected="true">day</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="month-tab" data-toggle="tab" href="#month" role="tab" aria-controls="month" aria-selected="false">month</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="year-tab" data-toggle="tab" href="#year" role="tab" aria-controls="year" aria-selected="false">year</a>
+						</li>
+					</ul>
+					<div class="tab-content" id="myTabContent">
+						<section class="tab-pane fade show active" id="day" role="tabpanel" aria-labelledby="day-tab">
+							<div class="row">
+								<div class="col">
+									<p>Average Daily Energy Use</p>
+									<section class="placeholder">
+										<div class="google-chart">
+											<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+											<div id="chart_div"></div>
+												<script>
+													google.charts.load('current', {packages: ['corechart', 'line']});
+													google.charts.setOnLoadCallback(drawBasic);
+
+													function drawBasic() {
+
+																var data = new google.visualization.DataTable();
+																data.addColumn('number', 'X');
+																data.addColumn('number', 'kWh');
+
+																data.addRows([
+																	[0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+																	[6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+																	[12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+																	[18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+																	[24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+																	[30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+																	[36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+																	[42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+																	[48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+																	[54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+																	[60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+																	[66, 70], [67, 72], [68, 75], [69, 80]
+																]);
+
+																var options = {
+																	hAxis: {
+																		title: 'Days'
+																	},
+																	vAxis: {
+																		title: 'Usage'
+																	}
+																};
+
+																var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+																chart.draw(data, options);
+															}
+														</script>
+										</div>
+										<!-- end google-chart -->
+									</section>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<img src="i/iconset1/002-solarpanel.svg" alt="" class="is3" />
+								</div>
+								<div class="col-10">
+									<p>Electricity Generated:
+										<br />+0 kW</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<img src="i/iconset1/011-leafbulbmoney.svg" alt="" class="is3" />
+								</div>
+								<div class="col-10">
+									<p>Return on Investment:
+										<br />$0 / $0</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<img src="i/iconset1/036-leafplant.svg" alt="" class="is3" />
+								</div>
+								<div class="col-10">
+									<p>CO<sup>2</sup> Reduced:
+										<br />0 kG</p>
+								</div>
+							</div>
+						</section>
+						<section class="tab-pane fade" id="month" role="tabpanel" aria-labelledby="month-tab">
+							<div class="row">
+								<div class="col">
+									<p>Average Monthly Energy Use</p>
+									<section class="placeholder">
+										<div class="google-chart">
+											<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+											<div id="chart_div2"></div>
+												<script>
+													google.charts.load('current', {packages: ['corechart', 'line']});
+													google.charts.setOnLoadCallback(drawBasic);
+
+													function drawBasic() {
+
+																var data = new google.visualization.DataTable();
+																data.addColumn('number', 'X');
+																data.addColumn('number', 'kWh');
+
+																data.addRows([
+																	[0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+																	[6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+																	[12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+																	[18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+																	[24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+																	[30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+																	[36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+																	[42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+																	[48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+																	[54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+																	[60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+																	[66, 70], [67, 72], [68, 75], [69, 80]
+																]);
+
+																var options = {
+																	hAxis: {
+																		title: 'Months'
+																	},
+																	vAxis: {
+																		title: 'Usage'
+																	}
+																};
+
+																var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
+
+																chart.draw(data, options);
+															}
+														</script>
+										</div>
+										<!-- end google-chart -->
+									</section>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<img src="i/iconset1/002-solarpanel.svg" alt="" class="is3" />
+								</div>
+								<div class="col-10">
+									<p>Electricity Generated:
+										<br />+0 kW</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<img src="i/iconset1/011-leafbulbmoney.svg" alt="" class="is3" />
+								</div>
+								<div class="col-10">
+									<p>Return on Investment:
+										<br />$0 / $0</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<img src="i/iconset1/036-leafplant.svg" alt="" class="is3" />
+								</div>
+								<div class="col-10">
+									<p>CO<sup>2</sup> Reduced:
+										<br />0 kG</p>
+								</div>
+							</div>
+						</section>
+						<section class="tab-pane fade" id="year" role="tabpanel" aria-labelledby="year-tab">
+							<div class="row">
+								<div class="col">
+									<p>Average Yearly Energy Use</p>
+									<section class="placeholder">
+										<div class="google-chart">
+											<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+											<div id="chart_div3"></div>
+												<script>
+													google.charts.load('current', {packages: ['corechart', 'line']});
+													google.charts.setOnLoadCallback(drawBasic);
+
+													function drawBasic() {
+
+																var data = new google.visualization.DataTable();
+																data.addColumn('number', 'X');
+																data.addColumn('number', 'kWh');
+
+																data.addRows([
+																	[0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+																	[6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+																	[12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+																	[18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+																	[24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+																	[30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+																	[36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+																	[42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+																	[48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+																	[54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+																	[60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+																	[66, 70], [67, 72], [68, 75], [69, 80]
+																]);
+
+																var options = {
+																	hAxis: {
+																		title: 'Years'
+																	},
+																	vAxis: {
+																		title: 'Usage'
+																	}
+																};
+
+																var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
+
+																chart.draw(data, options);
+															}
+														</script>
+										</div>
+										<!-- end google-chart -->
+									</section>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<img src="i/iconset1/002-solarpanel.svg" alt="" class="is3" />
+								</div>
+								<div class="col-10">
+									<p>Electricity Generated:
+										<br />+0 kW</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<img src="i/iconset1/011-leafbulbmoney.svg" alt="" class="is3" />
+								</div>
+								<div class="col-10">
+									<p>Return on Investment:
+										<br />$0 / $0</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-2">
+									<img src="i/iconset1/036-leafplant.svg" alt="" class="is3" />
+								</div>
+								<div class="col-10">
+									<p>CO<sup>2</sup> Reduced:
+										<br />0 kG</p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</section>
+			</div>
+			<!-- end col -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script>
+	window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.slim.min.js"><\/script>')
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+	// show/hide video
+	$(document).ready(function() {
+
+		$("#eytv").hide();
+		$("#eyt").show();
+
+		$('#eyt').click(function() {
+			$("#eytv").toggle();
+			return false;
+		});
+
+	});
+	</script>
+</body>
+</html>

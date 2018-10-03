@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center"><img src="/i/p2p_logo_360w.png" alt="Power2Peer" width="360" height="107" />
+            </h1>
+            <!-- <h3>Login or <a href="#">Sign up</a></h3> -->
+
+            <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab">
+                <li class="nav-item">
+                    <a class="nav-link" id="login-tab" href="/users/login" aria-controls="login" aria-selected="false">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="register-tab" href="/api/register" aria-controls="register" aria-selected="true">Register</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <section class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
+                    {{#if user}}
+                            <div class="alert alert-danger">Username has taken already try new</div> 
+                    {{/if}}
+                    {{#if mail}}
+                            <div class="alert alert-danger">Email has taken already try new</div> 
+                    {{/if}} 
+                    {{#if errors}}
+                        {{#each errors}}
+                            <div class="alert alert-danger">{{msg}}</div>
+                        {{/each}}
+                    {{/if}}
+                    <form method="post" action="/users/register">
+                        <div class="form-group">
+                            <label for="Uname">Full Name</label>
+                            <input type="text" class="form-control" id="Uname" name="name" placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="Uname">Username</label>
+                            <input type="text" class="form-control" id="Uname" name="username" placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                            <label for="Uname">Email Address</label>
+                            <input type="email" class="form-control" id="Email" name="email" placeholder="Enter email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password2">Password</label>
+                            <input type="password" class="form-control" id="Password2" name="password" placeholder="Enter password">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password2c">Confirm Password</label>
+                            <input type="password" class="form-control" id="Password2c" name="password2" placeholder="Confirm password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Password2c">MVP MAC</label>
+                            <input type="text" class="form-control" id="Password2c" name="mac" placeholder="Enter MVP MAC address">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password2c">MVP IP</label>
+                            <input type="text" class="form-control" id="Password2c" name="ip" placeholder="Enter MVP IP address">
+                        </div>
+
+                        <div class="form-group mt-3 text-center">
+                            <!-- <button type="submit" class="btn btn-block btn-lg btn-primary">Register</button> -->
+                            <button type="submit" class="btn btn-block btn-lg btn-primary">Register</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

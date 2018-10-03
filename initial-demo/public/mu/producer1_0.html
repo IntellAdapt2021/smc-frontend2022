@@ -1,0 +1,185 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>producer1</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="i/icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="shortcut icon" href="i/favicon.ico" />
+	<!-- 60x60//-->
+	<!-- https://msdn.microsoft.com/en-us/library/dn455106(v=vs.85).aspx -->
+	<meta name="msapplication-config" content="tile.xml" />
+	<meta name="application-name" content="tiletext" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/001.css?0704c" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/001.js"></script>
+</head>
+<body>
+	<!--[if lte IE 9]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p> <![endif]-->
+	<nav class="navbar navbar-expand navbar-light bg-light">
+		<a class="navbar-brand" href="home.html"><img src="i/p2p_logo-shape.png" alt="Power2Peer" style="max-height:48px;" />
+		</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item dropdown mode"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Mode </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="consumer1.html">Consumer</a>
+						<div class="dropdown-divider"></div> <a class="dropdown-item" href="producer1.html">Producer&#x2001;&#x2714;</a>
+						<!-- <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Something else here</a> --></div>
+				</li>
+				<li class="nav-item"> <a class="nav-link" href="producer2.html">Battery</a>
+				</li>
+				<!-- <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a> </li> -->
+				<li class="nav-item"> <a class="nav-link" href="producer3.html">Community</a>
+				</li>
+				<li class="nav-item"> <a class="nav-link" href="producer4.html">Forum</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- end navbar -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<h1>Producer Microgrid Status Page - slide 14</h1>
+				<link href="css/003-led.css?0704c" rel="stylesheet" type="text/css" />
+				<section>
+					<!-- <p>Your microgrid</p>
+					<div class="row microgrid1">
+						<div class="col">
+							<div class="led down off"></div>
+						</div>
+						<div class="col">
+							<div class="led off repair"></div>
+						</div>
+						<div class="col">
+							<div class="led off working"></div>
+						</div>
+						<div class="col">
+							<div class="led off clear"></div>
+						</div>
+						<div class="col">555</div>
+						<div class="col">
+							<div class="led down"></div>
+						</div>
+						<div class="col">
+							<div class="led repair"></div>
+						</div>
+						<div class="col">
+							<div class="led working"></div>
+						</div>
+						<div class="col">
+							<div class="led clear"></div>
+						</div>
+						<div class="col">000</div>
+						<div class="col">111</div>
+					</div> -->
+					<!-- end row -->
+					<div class="row microgrid3">
+						<div class="col mg-container">
+							<div class="mg-outer">
+								<span class="solar"><span class="sr-only">solar</span></span>
+								<span class="solar"><span class="sr-only">solar</span></span>
+								<span class="solar"><span class="sr-only">solar</span></span>
+								<span class="solar"><span class="sr-only">solar</span></span>
+								<div class="mg-mid">
+									<span class="mgrid"><span class="sr-only">mgrid</span></span>
+									<span class="mgrid"><span class="sr-only">mgrid</span></span>
+									<span class="mgrid"><span class="sr-only">mgrid</span></span>
+									<span class="mgrid"><span class="sr-only">mgrid</span></span>
+									<div class="mg-inner">
+										<span class="junction-box"><span class="sr-only">jbox</span></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row microgrid2">
+						<div class="col">
+							<p class="mb-0">Your Microgrid</p>
+							<ul class="mc-diagram1">
+								<li><i class="led working"></i>junction box
+									<ul class="nodes">
+										<li><i class="led working"></i>line
+											<ul class="juction-box">
+												<li>electric grid
+													<ul class="nodes">
+														<li>line
+															<ul class="homes">
+																<li>homes</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><i class="led repair"></i>line
+											<ul class="juction-box">
+												<li>electric grid
+													<ul class="nodes">
+														<li>line
+															<ul class="homes">
+																<li>homes</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><i class="led down"></i>line
+											<ul class="juction-box">
+												<li>electric grid
+													<ul class="nodes">
+														<li>line
+															<ul class="homes">
+																<li>homes</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><i class="led null off"></i>line
+											<ul class="juction-box">
+												<li>electric grid
+													<ul class="nodes">
+														<li>line
+															<ul class="homes">
+																<li>homes</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- end row microgrid -->
+					<div class="row">
+						<div class="col">
+							<p class="text-center"><a href="producer1control.html" class="btn btn-lg btn-primary">Control</a>  <a href="producer1stats.html" class="btn btn-lg btn-primary">Statistics</a>  <a href="#" class="btn btn-lg btn-primary">Support</a>
+							</p>
+						</div>
+					</div>
+					<!-- end row -->
+				</section>
+			</div>
+			<!-- end col -->
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script>
+	window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.slim.min.js"><\/script>')
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

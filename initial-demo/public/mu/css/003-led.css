@@ -1,0 +1,190 @@
+/*NOTE: please combine all CSS files into ONE FILE if/when used in production, they're only separate to make dev easier*/
+
+.led {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  margin: 0 auto;
+  background-color: hsla(0, 0%, 33%, 1);
+  box-shadow: none;
+  border: 3px solid hsla(0, 0%, 25%, 0.4);
+}
+
+/*.led:hover, .led.active {
+  background-color: hsla(0, 100%, 33%, 1);
+  box-shadow: 0px 0px 10px 5px rgba(255, 0, 0, 0.4);
+  border: 3px solid rgba(120, 0, 0, 1);
+}*/
+
+.led:before {
+  content:"";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: rgba(255,255,255,0.8);
+  box-shadow: 4px 4px 6px 7px hsla(0, 0%, 50%, 1);
+}
+
+.led.off:before{
+  background-color: rgba(255,255,255,1);
+  box-shadow: 4px 4px 6px 7px hsla(0, 100%, 50%, 1);
+}
+
+/*.led:hover .hilight, .led.active .hilight {
+  background-color: rgba(255,255,255,1);
+  box-shadow: 4px 4px 6px 7px hsla(0, 100%, 50%, 1);
+}*/
+
+/* red / pink */
+.led.down, .led.down.off:hover{
+  background-color: hsla(0, 100%, 33%, 1);
+  box-shadow: 0px 0px 10px 5px  hsla(0, 100%, 50%, 0.4);
+  border: 3px solid hsla(0, 100%, 24%, 0.4);
+}
+.led.down:before, .led.down.off:hover:before{
+  box-shadow: 4px 4px 6px 7px hsla(0, 100%, 50%, 1);
+}
+.led.down.off{
+  background-color: hsla(0, 100%, 17%, 1);
+  box-shadow: none;
+  border: 3px solid hsla(0, 100%, 12%, 0.4);
+}
+.led.down.off:before{
+  box-shadow: 4px 4px 6px 7px hsla(0, 100%, 25%, 1);
+}
+.colorblind .led.down{
+  background-color: hsla(300, 100%, 7%, 1);
+  box-shadow: 0px 0px 10px 5px  hsla(300, 100%, 50%, 0.4);
+  border: 3px solid hsla(300, 100%, 24%, 0.4);
+}
+.colorblind .led.down:before, .led.down.off:hover:before{
+  box-shadow: 4px 4px 6px 7px hsla(300, 100%, 50%, 1);
+}
+.colorblind .led.down.off{
+  background-color: hsla(300, 100%, 17%, 1);
+  box-shadow: none;
+  border: 3px solid hsla(300, 100%, 12%, 0.4);
+}
+.colorblind .led.down.off:before{
+  box-shadow: 4px 4px 6px 7px hsla(300, 100%, 25%, 1);
+}
+
+/* yellow / yellow */
+.led.repair, .led.repair.off:hover{
+  background-color: hsla(60, 100%, 33%, 1);
+  box-shadow: 0px 0px 10px 5px  hsla(60, 100%, 50%, 0.4);
+  border: 3px solid hsla(60, 100%, 24%, 0.4);
+}
+.led.repair:before, .led.repair.off:hover:before{
+  box-shadow: 4px 4px 6px 7px hsla(60, 100%, 50%, 1);
+}
+.led.repair.off{
+  background-color: hsla(60, 100%, 17%, 1);
+  box-shadow: none;
+  border: 3px solid hsla(60, 100%, 12%, 0.4);
+}
+.led.repair.off:before{
+  box-shadow: 4px 4px 6px 7px hsla(60, 100%, 25%, 1);
+}
+.colorblind .led.repair{
+  background-color: hsla(60, 100%, 33%, 1);
+  box-shadow: 0px 0px 10px 5px  hsla(60, 100%, 50%, 0.4);
+  border: 3px solid hsla(60, 100%, 24%, 0.4);
+}
+
+/* green / teal */
+.led.working, .led.working.off:hover{
+  background-color: hsla(120, 100%, 33%, 1);
+  box-shadow: 0px 0px 10px 5px  hsla(120, 100%, 50%, 0.4);
+  border: 3px solid hsla(120, 100%, 24%, 0.4);
+}
+.led.working:before, .led.working.off:hover:before{
+  box-shadow: 4px 4px 6px 7px hsla(120, 100%, 50%, 1);
+}
+.led.working.off{
+  background-color: hsla(120, 100%, 17%, 1);
+  box-shadow: none;
+  border: 3px solid hsla(120, 100%, 12%, 0.4);
+}
+.led.working.off:before{
+  box-shadow: 4px 4px 6px 7px hsla(120, 100%, 25%, 1);
+}
+.colorblind .led.working{
+  background-color: hsla(176, 100%, 33%, 1);
+  box-shadow: 0px 0px 10px 5px  hsla(176, 100%, 50%, 0.4);
+  border: 3px solid hsla(176, 100%, 24%, 0.4);
+}
+.colorblind .led.working:before, .led.working.off:hover:before{
+  box-shadow: 4px 4px 6px 7px hsla(176, 100%, 50%, 1);
+}
+.colorblind .led.working.off{
+  background-color: hsla(176, 100%, 17%, 1);
+  box-shadow: none;
+  border: 3px solid hsla(176, 100%, 12%, 0.4);
+}
+.colorblind .led.working.off:before{
+  box-shadow: 4px 4px 6px 7px hsla(176, 100%, 25%, 1);
+}
+
+/* no color */
+.led.clear, .led.clear.off:hover, .led.null, .led.null.off:hover{
+  /*background-color: hsla(0, 100%, 7%, 1);*/
+  background-color: hsla(0, 0%, 66%, 1);
+  box-shadow: 0px 0px 10px 5px  hsla(0, 0%, 100%, 0.4);
+  border: 3px solid hsla(0, 0%, 50%, 0.4);
+}
+.led.clear:before, .led.clear.off:hover:before, .led.null:before, .led.null.off:hover:before{
+  box-shadow: 4px 4px 6px 7px hsla(0, 0%, 100%, 1);
+}
+.led.clear.off, .led.null.off{
+  background-color: hsla(0, 0%, 33%, 1);
+  box-shadow: none;
+  border: 3px solid hsla(0, 0%, 25%, 0.4);
+}
+.led.clear.off:before, .led.null.off:before{
+  box-shadow: 4px 4px 6px 7px hsla(0, 0%, 50%, 1);
+}
+
+/*** animated on/off */
+.blink:before {
+  animation: t-light 1000ms infinite; /* animation-name followed by duration in seconds*/
+     /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: t-light 1000ms infinite; /* Chrome and Safari */
+}
+.blink {
+  animation: t-glow 1000ms infinite;
+  -webkit-animation: t-glow 1000ms infinite; /* Chrome and Safari */
+}
+
+@keyframes t-light
+{
+  0%   {opacity: .5;}
+  15%  {opacity: 0;}
+  35%  {opacity: 1;}
+  100%  {opacity: 1;}
+}
+/* Safari and Chrome - necessary duplicate */
+@-webkit-keyframes t-light
+{
+  0%   {opacity: .5;}
+  15%  {opacity: 0;}
+  35%  {opacity: 1;}
+  100%  {opacity: 1;}
+}
+@keyframes t-glow
+{
+  0%   {box-shadow:unset;}
+  10%  {box-shadow:unset;}
+  100%  {}
+}
+/* Safari and Chrome - necessary duplicate */
+@-webkit-keyframes t-glow
+{
+  0%   {box-shadow:unset;}
+  10%  {box-shadow:unset;}
+  100%  {}
+}
