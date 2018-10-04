@@ -25,8 +25,8 @@
 </template>
 
 <script>
-  import axios from 'axios';
-  
+  import ProducerService from '@/services/ProducerService';
+
   export default {
     data() {
       return {
@@ -39,14 +39,12 @@
         }
     },
     mounted() {
-        axios({
-            method: "GET",
-            "url": "https://pokeapi.co/api/v2/pokemon/?limit=151"
-        }).then(result => {
-            this.$store.commit('setcount', result.data.count);
-        }, error => {
-            console.error(error);
-        });
+        this.producerService = new ProducerService();
+        this.producerService.getProducers().then( producers => {
+            this.$store.commit('setcount', producers.data.results.filter( e => {
+                return e.name.includes("or")
+            }).length);
+        })
     }
   }
 </script>
