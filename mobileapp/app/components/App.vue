@@ -25,6 +25,8 @@
 </template>
 
 <script>
+  import axios from 'axios';
+  
   export default {
     data() {
       return {
@@ -35,6 +37,16 @@
         count() {
             return this.$store.state.count
         }
+    },
+    mounted() {
+        axios({
+            method: "GET",
+            "url": "https://pokeapi.co/api/v2/pokemon/?limit=151"
+        }).then(result => {
+            this.$store.commit('setcount', result.data.count);
+        }, error => {
+            console.error(error);
+        });
     }
   }
 </script>
