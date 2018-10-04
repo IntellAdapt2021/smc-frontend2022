@@ -1,11 +1,11 @@
 {
-  "name": "sharedweb",
+  "name": "mobileapp",
   "version": "1.0.0",
-  "description": "p2p shared web ui code",
+  "description": "p2p mobile app",
   "author": "binodpanta <binod80@gmail.com>",
   "license": "MIT",
   "nativescript": {
-    "id": "com.power2peer.sharedweb",
+    "id": "com.power2peer.mobileapp",
     "tns-ios": {
       "version": "4.2.0"
     },
