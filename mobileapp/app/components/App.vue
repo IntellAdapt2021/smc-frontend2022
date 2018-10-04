@@ -12,7 +12,7 @@
             </TabViewItem>
             <TabViewItem title="Community">
                 <GridLayout colums="*" rows="*">
-                    <Label class="message" text="Tab 2 Content" col="0" row="0"/>
+                    <Label class="message" :text="count" col="0" row="0"/>
                 </GridLayout>
             </TabViewItem>
             <TabViewItem title="Forum">
@@ -30,6 +30,11 @@
       return {
         msg: 'Power2Peer'
       }
+    },
+    computed: {
+        count() {
+            return this.$store.state.count
+        }
     }
   }
 </script>
