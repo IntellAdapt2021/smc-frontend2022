@@ -11,15 +11,19 @@
                 </GridLayout>
             </TabViewItem>
             <TabViewItem title="Community">
-                <GridLayout colums="*" rows="*">
-                    <Label class="message" :text="usercount" col="0" row="0"/>
-                    <ListView for="user in users">
+                <StackLayout height="95%">
+                    <Label textWrap="true" height="70">
+                        <FormattedString>
+                            <Span text="Energy Producers" fontWeight="bold" fontSize="25" />
+                        </FormattedString>
+                    </Label>
+                   <ListView for="user in users" borderRadius="12">
                         <v-template>
                             <!-- Shows the list item label in the default color and style. -->
-                            <Label :text="user.name + ',' + user.email" />
+                            <Label :text="user.name" fontSize="20" marginBottom="5" marginTop="5"/>
                         </v-template>
-                        </ListView>
-                </GridLayout>
+                    </ListView>
+                </StackLayout>            
             </TabViewItem>
             <TabViewItem title="Forum">
                 <GridLayout colums="*" rows="*">
@@ -61,6 +65,18 @@
     ActionBar {
         background-color: rgba(47, 95, 141, 0.467);
         color: #ffffff;
+    }
+
+    StackLayout {
+        background-color: whitesmoke;
+    }
+
+    ListView {
+        background-color:lavender;
+        padding-bottom: 10;
+        vertical-align: center;
+        font-size: 10;
+        border-width: 0;
     }
 
     .message { 
