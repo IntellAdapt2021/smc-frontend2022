@@ -5,12 +5,14 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-      count: 0
+      count: 0,
+      registeredusers: []
     },
     mutations: {
       increment: state => state.count++,
       decrement: state => state.count--,
-      setcount: (state, newcount) => state.count = newcount
+      setcount: (state, newcount) => state.count = newcount,
+      setregisteredusers: (state, newusers) => state.registeredusers = newusers
     }
 })
 

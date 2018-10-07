@@ -12,7 +12,13 @@
             </TabViewItem>
             <TabViewItem title="Community">
                 <GridLayout colums="*" rows="*">
-                    <Label class="message" :text="count" col="0" row="0"/>
+                    <Label class="message" :text="usercount" col="0" row="0"/>
+                    <ListView for="user in users">
+                        <v-template>
+                            <!-- Shows the list item label in the default color and style. -->
+                            <Label :text="user.name + ',' + user.email" />
+                        </v-template>
+                        </ListView>
                 </GridLayout>
             </TabViewItem>
             <TabViewItem title="Forum">
@@ -34,17 +40,19 @@
       }
     },
     computed: {
-        count() {
-            return this.$store.state.count
+        usercount() {
+            return this.$store.state.registeredusers.length
+        },
+        users() {
+            return this.$store.state.registeredusers
         }
     },
     mounted() {
         this.producerService = new ProducerService();
         this.producerService.getProducers().then( producers => {
-            this.$store.commit('setcount', producers.data.results.filter( e => {
-                return e.name.includes("or")
-            }).length);
-        })
+            console.log(JSON.stringify(producers))
+            this.$store.commit('setregisteredusers', producers.data._embedded.registeredusers);
+        }).catch(error => console.log(error));
     }
   }
 </script>
