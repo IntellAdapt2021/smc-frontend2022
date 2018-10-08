@@ -17,7 +17,8 @@
                             <Span text="Energy Producers" fontWeight="bold" fontSize="25" />
                         </FormattedString>
                     </Label>
-                   <ListView for="user in users" borderRadius="12">
+                    <Button text="Reload" @tap="fetchProducers" class="reloadbtn btn btn-info btn-active" />
+                    <ListView for="user in users" borderRadius="12">
                         <v-template>
                             <!-- Shows the list item label in the default color and style. -->
                             <Label :text="user.name" fontSize="20" marginBottom="5" marginTop="5"/>
@@ -37,6 +38,13 @@
 <script>
   import ProducerService from '@/services/ProducerService';
 
+  const getProducers = function (app) {
+      app.producerService.getProducers().then(producers => {
+          console.log(JSON.stringify(producers))
+          app.$store.commit('setregisteredusers', producers.data._embedded.registeredusers);
+      }).catch(error => console.log(error));
+  }
+
   export default {
     data() {
       return {
@@ -53,10 +61,14 @@
     },
     mounted() {
         this.producerService = new ProducerService();
-        this.producerService.getProducers().then( producers => {
-            console.log(JSON.stringify(producers))
-            this.$store.commit('setregisteredusers', producers.data._embedded.registeredusers);
-        }).catch(error => console.log(error));
+        getProducers(this);
+    },
+    methods: {
+        fetchProducers(args) {
+            const button = args.object;
+            getProducers(this);
+            button.text = `${this.usercount} Producers found | Reload`;
+        }
     }
   }
 </script>
@@ -77,6 +89,10 @@
         vertical-align: center;
         font-size: 10;
         border-width: 0;
+    }
+
+    .reloadbtn {
+        background-color: dodgerblue;
     }
 
     .message { 
