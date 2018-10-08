@@ -8,8 +8,7 @@
         <Button text="Reload" @tap="fetchProducers" class="reloadbtn btn btn-info btn-active" />
         <ListView for="user in regusers" borderRadius="12">
             <v-template>
-                <!-- Shows the list item label in the default color and style. -->
-                <Label :text="user.name" fontSize="20" marginBottom="5" marginTop="5"/>
+                <Producer :user="user"/>
             </v-template>
         </ListView>
 </StackLayout>
@@ -24,6 +23,8 @@
 
 <script>
 import ProducerService from '@/services/ProducerService';
+import Producer from '@/components/Producer';
+
 const getProducers = function (app) {
     return app.producerService.getProducers().then(producers => {
         console.log(JSON.stringify(producers))
@@ -31,6 +32,9 @@ const getProducers = function (app) {
     }).catch(error => console.log(error));
 }
 export default {
+    components: {
+        Producer
+    },
     data() {
         return {
         }
