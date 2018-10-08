@@ -1,5 +1,5 @@
 <template>
-<StackLayout>
+<StackLayout marginLeft="8">
         <Label textWrap="true" height="70">
             <FormattedString>
                 <Span text="Energy Producers" fontWeight="bold" fontSize="25" />
