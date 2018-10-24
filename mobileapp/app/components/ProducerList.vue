@@ -1,12 +1,17 @@
 <template>
-<StackLayout marginLeft="8">
-        <Label textWrap="true" height="70">
+<StackLayout>
+        <Label dock="left" textWrap="true" height="70" 
+        backgroundImage="~/assets/images/birds.jpg">
             <FormattedString>
-                <Span text="Energy Producers" fontWeight="bold" fontSize="25" />
+                <Span color="#ffffff" text="Energy Producers" fontWeight="bold" fontSize="25" />
             </FormattedString>
+            
         </Label>
+        <DockLayout stretchLastChild="false" backgroundColor="#ffffff">
+            <Image dock="right" src="~/assets/images/cart.jpg" stretch="none"/>
+        </DockLayout>
         <Button text="Reload" @tap="fetchProducers" class="reloadbtn btn btn-info btn-active" />
-        <ListView for="user in regusers" borderRadius="12">
+        <ListView marginLeft="4" for="user in regusers" borderRadius="12">
             <v-template>
                 <Producer :user="user"/>
             </v-template>

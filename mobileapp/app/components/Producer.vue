@@ -28,7 +28,12 @@ export default {
       buy(args) {
         //console.log(args.object)
         this.buyMode = true;
-        this.$showModal(BuyPage, { props: { user: args.object.user }});
+        this.$showModal(BuyPage, { 
+          props: { user: args.object.user }
+        }).then(data => {
+          // once modal is closed we get this data
+          console.log(data);
+        });
       }
     }
 };

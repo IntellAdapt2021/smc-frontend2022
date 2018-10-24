@@ -1,16 +1,48 @@
 <template>
     <StackLayout>
-        <Button @tap="$modal.close" text="Close" />  
-        <Label flexGrow="1" width="100%" :text="'Buying from ' + user.name" />
+        <Label width="90%" flexGrow="1">
+            <FormattedString>
+                <Span text="Buying from : "/>
+                <Span :text="user.name" fontWeight="bold" />
+
+            </FormattedString>
+        </Label>
+        <TextField width="90%" :text="units + 'units'" 
+                hint="Energy units to buy..." 
+                v-model="units"
+                borderColor="#ccccce"
+                borderWidth="3"
+                flexGrow="1"
+        />
+        <Button width="40%" flexGrow="1" 
+                borderWidth="1"
+                height="40"
+                class="reloadbtn btn btn-info btn-active"
+                text="Proceed to Checkout" />  
+        <Button width="40%" flexGrow="1" 
+                borderWidth="1"
+                height="40"
+                class="reloadbtn btn btn-info btn-active"
+                @tap="$modal.close(units)" 
+                text="Close" />  
+
     </StackLayout>
 </template>
 
 <script>
 export default {
-    props: ["user"]
+    props: ["user"],
+    data() {
+        return {
+            units: 0
+        }
+    }
+    
 }
 </script>
 
-<style>
-
+<style scoped>
+.reloadbtn {
+  background-color: dodgerblue;
+}
 </style>
