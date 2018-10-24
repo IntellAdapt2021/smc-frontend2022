@@ -14,15 +14,20 @@
                 borderWidth="3"
                 flexGrow="1"
         />
-        <Button width="40%" flexGrow="1" 
+        <Button width="60%" flexGrow="1" 
                 borderWidth="1"
                 height="40"
-                class="reloadbtn btn btn-info btn-active"
+                class="reloadbtn btn btn-info"
                 text="Proceed to Checkout" />  
-        <Button width="40%" flexGrow="1" 
+        <Button width="60%" flexGrow="1" 
                 borderWidth="1"
                 height="40"
-                class="reloadbtn btn btn-info btn-active"
+                class="reloadbtn btn btn-info"
+                text="Buy more" />  
+        <Button width="60%" flexGrow="1" 
+                borderWidth="1"
+                height="40"
+                class="reloadbtn btn btn-info"
                 @tap="$modal.close(units)" 
                 text="Close" />  
 
