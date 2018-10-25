@@ -1,10 +1,16 @@
 <template>
     <StackLayout>
-        <Label width="90%" flexGrow="1">
+        
+        <Label width="90%" flexGrow="1" paddingTop="20" paddingBottom="5">
             <FormattedString>
                 <Span text="Buying from : "/>
                 <Span :text="user.name" fontWeight="bold" />
-
+            </FormattedString>
+        </Label>
+        <Label width="90%" flexGrow="1" paddingTop="5" paddingBottom="20">
+            <FormattedString>
+                <Span text="Available Units : "/>
+                <Span :text="user.availUnits" fontWeight="bold" />
             </FormattedString>
         </Label>
         <TextField width="90%" :text="units + 'units'" 
@@ -12,19 +18,21 @@
                 v-model="units"
                 borderColor="#ccccce"
                 borderWidth="3"
+                borderRadius="7"
+                margin="4"
                 flexGrow="1"
         />
-        <Button width="60%" flexGrow="1" 
+        <Button width="90%" flexGrow="1" 
                 borderWidth="1"
                 height="40"
                 class="reloadbtn btn btn-info"
                 text="Proceed to Checkout" />  
-        <Button width="60%" flexGrow="1" 
+        <Button width="90%" flexGrow="1" 
                 borderWidth="1"
                 height="40"
                 class="reloadbtn btn btn-info"
                 text="Buy more" />  
-        <Button width="60%" flexGrow="1" 
+        <Button width="90%" flexGrow="1" 
                 borderWidth="1"
                 height="40"
                 class="reloadbtn btn btn-info"
