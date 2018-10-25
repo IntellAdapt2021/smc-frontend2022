@@ -1,21 +1,30 @@
 <template>
 <StackLayout>
-        <Label dock="left" textWrap="true" height="70" 
+        <Label dock="left" textWrap="true" height="40" 
         backgroundImage="~/assets/images/birds.jpg">
             <FormattedString>
                 <Span color="#ffffff" text="Energy Producers" fontWeight="bold" fontSize="25" />
             </FormattedString>
-            
+
         </Label>
         <DockLayout stretchLastChild="false" backgroundColor="#ffffff">
             <Image dock="right" src="~/assets/images/cart.jpg" stretch="none"/>
         </DockLayout>
         <Button text="Reload" @tap="fetchProducers" class="reloadbtn btn btn-info btn-active" />
+    
+        <FlexboxLayout>
+            <!-- Shows the list item label in the default color and style. -->
+            <Label flexGrow="1" text="Producer" fontWeight="20" marginBottom="5" marginTop="5"/>
+            <Label flexGrow="1" width="30" fontWeight="20" text="Address"/>
+            <Label flexGrow="1" width="30" fontWeight="20" text="Tokens Avail"/>
+            <Label flexGrow="1" width="20" fontWeight="20" text="Cost/KWh"/>
+        </FlexboxLayout>
         <ListView marginLeft="4" for="user in regusers" borderRadius="12">
             <v-template>
                 <Producer :user="user"/>
             </v-template>
         </ListView>
+
 </StackLayout>
 </template>
 

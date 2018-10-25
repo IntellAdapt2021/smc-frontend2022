@@ -1,6 +1,5 @@
 <template>
     <StackLayout>
-        
         <Label width="90%" flexGrow="1" paddingTop="20" paddingBottom="5">
             <FormattedString>
                 <Span text="Buying from : "/>
@@ -9,8 +8,8 @@
         </Label>
         <Label width="90%" flexGrow="1" paddingTop="5" paddingBottom="20">
             <FormattedString>
-                <Span text="Available Units : "/>
-                <Span :text="user.availUnits" fontWeight="bold" />
+                <Span text="Available Tokens : "/>
+                <Span :text="user.tokensAvailable" fontWeight="bold" />
             </FormattedString>
         </Label>
         <TextField width="90%" :text="units + 'units'" 
