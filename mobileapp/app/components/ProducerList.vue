@@ -14,10 +14,14 @@
     
         <FlexboxLayout>
             <!-- Shows the list item label in the default color and style. -->
-            <Label flexGrow="1" text="Producer" fontWeight="20" marginBottom="5" marginTop="5"/>
-            <Label flexGrow="1" width="30" fontWeight="20" text="Address"/>
-            <Label flexGrow="1" width="30" fontWeight="20" text="Tokens Avail"/>
-            <Label flexGrow="1" width="20" fontWeight="20" text="Cost/KWh"/>
+            <Label flexGrow="1" text="Producer" 
+              fontSize="11" fontWeight="20" marginBottom="5" marginTop="5"/>
+            <Label flexGrow="1" width="30" fontSize="11"
+              fontWeight="20" text="Address"/>
+            <Label flexGrow="1" width="30" fontSize="11"
+             fontWeight="20" text="Tokens Avail"/>
+            <Label flexGrow="1" width="20" fontSize="11"
+              fontWeight="20" text="Cost/KWh"/>
         </FlexboxLayout>
         <ListView marginLeft="4" for="user in regusers" borderRadius="12">
             <v-template>
