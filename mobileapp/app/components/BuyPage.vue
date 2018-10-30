@@ -12,8 +12,14 @@
                 <Span :text="user.tokensAvailable" fontWeight="bold" />
             </FormattedString>
         </Label>
+        <Label width="90%" flexGrow="1" paddingTop="20" paddingBottom="5">
+            <FormattedString>
+                <Span text="Cost $: "/>
+                <Span :text="cost"/>
+            </FormattedString>
+        </Label>
         <TextField width="90%" :text="units + 'units'" 
-                hint="Energy units to buy..." 
+                hint="Energy Kwh to buy..." 
                 v-model="units"
                 borderColor="#ccccce"
                 borderWidth="3"
@@ -46,7 +52,13 @@ export default {
     props: ["user"],
     data() {
         return {
-            units: 0
+            pricePerKwh: this.user.pricePerKwh,
+            units: undefined
+        }
+    },
+    computed: {
+        cost() {
+            return (this.units || 0 ) * this.pricePerKwh
         }
     }
     

@@ -4,7 +4,7 @@
       <Label flexGrow="1" :text="user.name" width="100" fontSize="10" marginBottom="5" marginTop="5"/>
       <Label flexGrow="1" width="30" fontSize="10"  text="addr"/>
       <Label flexGrow="1" width="30" fontSize="10" :text="user.tokensAvailable"/>
-      <Label flexGrow="1" width="20" fontSize="10" text="$0.97"/>
+      <Label flexGrow="1" width="20" fontSize="10" :text="'$'+user.pricePerKwh"/>
       <Button @tap="buy" :user="user" fontSize="10" flexGrow="1" width="10" text="Buy!"/>
     </FlexboxLayout>
 </template>
