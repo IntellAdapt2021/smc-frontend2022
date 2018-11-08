@@ -108,6 +108,9 @@ export default {
         getProducers(this).then( () => {} );
         this.$store.commit('settitletext', "Find Energy Producers");
     },
+    updated() {
+        //this.$store.commit('settitletext', "Find Energy Producers");
+    },
     methods: {
         fetchProducers(args) {
             const button = args.object;
@@ -116,6 +119,7 @@ export default {
                 button.text = `${this.usercount} Producers found | Reload`;
                 that.$store.commit('setcheckoutmode', false);
                 that.$store.commit('setbuymode', false);
+                this.$store.commit('settitletext', "Find Energy Producers");
             });
         },
         gotoCart() {
