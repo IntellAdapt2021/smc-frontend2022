@@ -7,14 +7,14 @@
             </FormattedString>
         </Label>
         
-        <DockLayout v-if="!isBuyMode" stretchLastChild="false" backgroundColor="#ffffff">
+        <DockLayout v-if="isListMode" stretchLastChild="false" backgroundColor="#ffffff">
             <Image dock="right" src="~/assets/images/cart.jpg" stretch="none"/>
         </DockLayout>
-        <Button text="Reload" @tap="fetchProducers" class="reloadbtn btn btn-info btn-active" />
+        <Button text="Show/Update Producers" @tap="fetchProducers" class="reloadbtn btn btn-info btn-active" />
         <Button :text="'Go to Cart (' + cartSizeText + ')'" class="reloadbtn btn btn-info btn-active"  
                 fontSize="12" @tap="gotoCart" />
 
-        <FlexboxLayout v-if="!isBuyMode">
+        <FlexboxLayout v-if="isListMode">
             <!-- Shows the list item label in the default color and style. -->
             <Label flexGrow="1" text="Producer" 
               fontSize="11" fontWeight="20" marginBottom="5" marginTop="5"/>
@@ -26,7 +26,7 @@
               fontWeight="20" text="Cost/KWh"/>
         </FlexboxLayout>
                 
-        <ListView v-if="!isBuyMode" marginLeft="4" for="user in regusers" borderRadius="12">
+        <ListView v-if="isListMode" marginLeft="4" for="user in regusers" borderRadius="12">
             <v-template>
                 <Producer :user="user" :store="$store"/>
             </v-template>
@@ -34,6 +34,10 @@
 
         <FlexBoxLayout v-if="isBuyMode">
             <buy-page :store="$store"/>
+        </FlexBoxLayout>
+
+        <FlexBoxLayout v-if="isCheckoutMode">
+            <checkout-page :store="$store"/>
         </FlexBoxLayout>
 
 </StackLayout>
@@ -79,6 +83,12 @@ export default {
             console.log("Store state is " + JSON.stringify(this.$store.state));
             return this.$store.state.registeredusers
         },
+        isListMode() {
+            return !this.$store.state.checkoutmode && !this.$store.state.buymode
+        },
+        isCheckoutMode() {
+            return this.$store.state.checkoutmode
+        },
         isBuyMode() {
             return this.$store.state.buymode
         },
@@ -96,21 +106,16 @@ export default {
     methods: {
         fetchProducers(args) {
             const button = args.object;
+            let that = this;
             getProducers(this).then( () => {
                 button.text = `${this.usercount} Producers found | Reload`;
+                that.$store.commit('setcheckoutmode', false);
+                that.$store.commit('setbuymode', false);
             });
         },
         gotoCart() {
-            this.$navigateTo(this.checkoutPage);
-            //this.currentview = "checkout";
-        },
-        goToBuy(args) {
-            // go to Buy Page
-            this.$navigateTo(this.buyPage, {
-                props: {
-                    user: args.object.user
-                }
-            });
+            this.$store.commit('setcheckoutmode', true);
+            this.$store.commit('setbuymode', false);
         }
     }
 };

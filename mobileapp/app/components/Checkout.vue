@@ -9,7 +9,8 @@
            
         <ListView marginLeft="4" for="checkoutitem in checkoutitems" borderRadius="12">
            <v-template>
-               <Span :text="checkoutitem.name"/>
+               <Span :text="'Seller' + checkoutitem.producer"/>
+               <Span :text="'Cost: $' + checkoutitem.cost"/>
                <!--<CheckoutItem :item="checkoutitem"/>-->
             </v-template>
         </ListView>
@@ -27,14 +28,13 @@
 <script>
 //import CheckoutItem from "@/components/CheckoutItem";
 export default {
+    props: ["store"],
     components: {
         //CheckoutItem
     },
     computed: {
         checkoutitems() {
-            return [
-                {name: "Binod"}
-            ]
+            return this.store.state.checkoutitems
         }
     }
 };

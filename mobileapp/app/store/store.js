@@ -9,6 +9,7 @@ const store = new Vuex.Store({
       registeredusers: [],
       buymode: false,
       buyuser: {},
+      checkoutmode: false, // true if in checkout page
       cartItems: []
     },
     mutations: {
@@ -16,7 +17,12 @@ const store = new Vuex.Store({
       decrement: state => state.count--,
       setcount: (state, newcount) => state.count = newcount,
       setregisteredusers: (state, newusers) => state.registeredusers = newusers,
-      setbuymode: (state, mode) => state.buymode = mode,
+      setcheckoutmode: (state, mode) => {
+        state.checkoutmode = mode;
+      },
+      setbuymode: (state, mode) => { 
+        state.buymode = mode;
+      },
       setbuyuser: (state, user) => state.buyuser = user,
       addcartitem: (state, cartItem) => state.cartItems.push(cartItem),
       removecartitem: (state, cartItem) => {
