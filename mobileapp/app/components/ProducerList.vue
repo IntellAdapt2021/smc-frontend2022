@@ -5,14 +5,15 @@
             <FormattedString>
                 <Span color="#ffffff" text="Energy Producers" fontWeight="bold" fontSize="25" />
             </FormattedString>
-
         </Label>
-        <DockLayout stretchLastChild="false" backgroundColor="#ffffff">
+        
+        <DockLayout v-if="!isBuyMode" stretchLastChild="false" backgroundColor="#ffffff">
             <Image dock="right" src="~/assets/images/cart.jpg" stretch="none"/>
         </DockLayout>
         <Button text="Reload" @tap="fetchProducers" class="reloadbtn btn btn-info btn-active" />
-    
-        <FlexboxLayout>
+        <Button text="Go to Cart" class="reloadbtn btn btn-info btn-active"  fontSize="10" @tap="gotoCart" />
+
+        <FlexboxLayout v-if="!isBuyMode">
             <!-- Shows the list item label in the default color and style. -->
             <Label flexGrow="1" text="Producer" 
               fontSize="11" fontWeight="20" marginBottom="5" marginTop="5"/>
@@ -23,11 +24,16 @@
             <Label flexGrow="1" width="20" fontSize="11"
               fontWeight="20" text="Cost/KWh"/>
         </FlexboxLayout>
-        <ListView marginLeft="4" for="user in regusers" borderRadius="12">
+                
+        <ListView v-if="!isBuyMode" marginLeft="4" for="user in regusers" borderRadius="12">
             <v-template>
-                <Producer :user="user"/>
+                <Producer :user="user" :store="$store"/>
             </v-template>
         </ListView>
+
+        <FlexBoxLayout v-if="isBuyMode">
+            <buy-page :store="$store"/>
+        </FlexBoxLayout>
 
 </StackLayout>
 </template>
@@ -49,9 +55,14 @@ const getProducers = function (app) {
         app.$store.commit('setregisteredusers', producers.data._embedded.registeredusers);
     }).catch(error => console.log(error));
 }
+
+import CheckoutPage from "@/components/Checkout"
+import BuyPage from "@/components/BuyPage"
 export default {
     components: {
-        Producer
+        Producer,
+        CheckoutPage,
+        BuyPage
     },
     data() {
         return {
@@ -64,6 +75,12 @@ export default {
         regusers() {
             console.log("Store state is " + JSON.stringify(this.$store.state));
             return this.$store.state.registeredusers
+        },
+        isBuyMode() {
+            return this.$store.state.buymode
+        },
+        buyUser() {
+            return this.$store.state.buyuser
         }
     },
     mounted() {
@@ -75,6 +92,18 @@ export default {
             const button = args.object;
             getProducers(this).then( () => {
                 button.text = `${this.usercount} Producers found | Reload`;
+            });
+        },
+        gotoCart() {
+            this.$navigateTo(this.checkoutPage);
+            //this.currentview = "checkout";
+        },
+        goToBuy(args) {
+            // go to Buy Page
+            this.$navigateTo(this.buyPage, {
+                props: {
+                    user: args.object.user
+                }
             });
         }
     }

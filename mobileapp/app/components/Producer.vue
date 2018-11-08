@@ -14,29 +14,39 @@
 
 <script>
 import BuyPage from "@/components/BuyPage";
+import CheckoutPage from "@/components/Checkout";
+import ProducerList from "@/components/ProducerList";
+
 export default {
-    components: {
-      BuyPage
-    },
-    props: ['user'],
-    data() {
-      return  {
-        buyMode: false,
-        buyPage: BuyPage
-      }
-    },
-    methods: {
-      buy(args) {
-        //console.log(args.object)
-        this.buyMode = true;
-        this.$showModal(BuyPage, { 
-          props: { user: args.object.user }
-        }).then(data => {
-          // once modal is closed we get this data
-          console.log(data);
-        });
-      }
+  components: {
+    BuyPage,
+    CheckoutPage,
+    ProducerList
+  },
+  props: ["user", "store"],
+  data() {
+    return {
+    };
+  },
+  methods: {
+    buy(args) {
+      //console.log(args.object)
+      this.store.commit('setbuymode', true);
+      this.store.commit('setbuyuser', args.object.user);
+    
+      // using navigateTo crashes app!
+      /*this.$showModal(BuyPage, {
+        props: { user: args.object.user }
+      }).then(data => {
+        // once modal is closed we get this data
+        console.log(data);
+        if (data === "checkout") {
+          console.log("Going to checkout");
+          that.$navigateTo(that.checkoutPage);
+        }
+      });*/
     }
+  }
 };
 </script>
 

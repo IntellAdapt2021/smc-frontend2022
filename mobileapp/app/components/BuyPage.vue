@@ -31,17 +31,19 @@
                 borderWidth="1"
                 height="40"
                 class="reloadbtn btn btn-info"
+                @tap="backToProducerList"
                 text="Proceed to Checkout" />  
         <Button width="90%" flexGrow="1" 
                 borderWidth="1"
                 height="40"
                 class="reloadbtn btn btn-info"
-                text="Buy more" />  
+                @tap="backToProducerList"
+                text="Keep shopping" />  
         <Button width="90%" flexGrow="1" 
                 borderWidth="1"
                 height="40"
                 class="reloadbtn btn btn-info"
-                @tap="$modal.close(units)" 
+                @tap="backToProducerList" 
                 text="Close" />  
 
     </StackLayout>
@@ -49,16 +51,23 @@
 
 <script>
 export default {
-    props: ["user"],
+    props: ["store"],
     data() {
         return {
-            pricePerKwh: this.user.pricePerKwh,
+            user: this.$store.state.buyuser,
+            pricePerKwh: this.$store.state.buyuser.pricePerKwh,
             units: undefined
         }
     },
     computed: {
         cost() {
             return (this.units || 0 ) * this.pricePerKwh
+        }
+    },
+    methods : {
+        backToProducerList() {
+            this.store.commit('setbuymode', false);
+            this.store.commit('setbuyuser', {});
         }
     }
     

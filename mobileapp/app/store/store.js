@@ -6,13 +6,17 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
       count: 0,
-      registeredusers: []
+      registeredusers: [],
+      buymode: false,
+      buyuser: {}
     },
     mutations: {
       increment: state => state.count++,
       decrement: state => state.count--,
       setcount: (state, newcount) => state.count = newcount,
-      setregisteredusers: (state, newusers) => state.registeredusers = newusers
+      setregisteredusers: (state, newusers) => state.registeredusers = newusers,
+      setbuymode: (state, mode) => state.buymode = mode,
+      setbuyuser: (state, user) => state.buyuser = user
     }
 })
 
