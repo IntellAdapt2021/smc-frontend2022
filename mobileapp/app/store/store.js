@@ -8,7 +8,8 @@ const store = new Vuex.Store({
       count: 0,
       registeredusers: [],
       buymode: false,
-      buyuser: {}
+      buyuser: {},
+      cartItems: []
     },
     mutations: {
       increment: state => state.count++,
@@ -16,7 +17,14 @@ const store = new Vuex.Store({
       setcount: (state, newcount) => state.count = newcount,
       setregisteredusers: (state, newusers) => state.registeredusers = newusers,
       setbuymode: (state, mode) => state.buymode = mode,
-      setbuyuser: (state, user) => state.buyuser = user
+      setbuyuser: (state, user) => state.buyuser = user,
+      addcartitem: (state, cartItem) => state.cartItems.push(cartItem),
+      removecartitem: (state, cartItem) => {
+        let remove = function(array, element) {
+          return array.filter(e => e !== element);
+        };
+        state.cartItems = remove(state.cartItems, cartItem);
+      }
     }
 })
 

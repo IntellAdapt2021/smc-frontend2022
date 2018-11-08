@@ -31,6 +31,12 @@
                 borderWidth="1"
                 height="40"
                 class="reloadbtn btn btn-info"
+                @tap="addToCart"
+                text="Add To Cart" />  
+        <Button width="90%" flexGrow="1" 
+                borderWidth="1"
+                height="40"
+                class="reloadbtn btn btn-info"
                 @tap="backToProducerList"
                 text="Proceed to Checkout" />  
         <Button width="90%" flexGrow="1" 
@@ -68,6 +74,13 @@ export default {
         backToProducerList() {
             this.store.commit('setbuymode', false);
             this.store.commit('setbuyuser', {});
+        },
+        addToCart() {
+            let cartItem = {
+                cost: this.cost,
+                producer: this.user
+            }
+            this.store.commit('addcartitem', cartItem)
         }
     }
     

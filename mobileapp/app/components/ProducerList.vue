@@ -11,7 +11,8 @@
             <Image dock="right" src="~/assets/images/cart.jpg" stretch="none"/>
         </DockLayout>
         <Button text="Reload" @tap="fetchProducers" class="reloadbtn btn btn-info btn-active" />
-        <Button text="Go to Cart" class="reloadbtn btn btn-info btn-active"  fontSize="10" @tap="gotoCart" />
+        <Button :text="'Go to Cart (' + cartSizeText + ')'" class="reloadbtn btn btn-info btn-active"  
+                fontSize="12" @tap="gotoCart" />
 
         <FlexboxLayout v-if="!isBuyMode">
             <!-- Shows the list item label in the default color and style. -->
@@ -41,7 +42,9 @@
 
 <style scoped>
 .reloadbtn {
-  background-color: dodgerblue;
+  background-color: rgb(14, 34, 5);
+  color: rgb(236, 240, 234);
+  font-weight: bold;
 }
 </style>
 
@@ -81,6 +84,9 @@ export default {
         },
         buyUser() {
             return this.$store.state.buyuser
+        },
+        cartSizeText() {
+            return this.$store.state.cartItems.length
         }
     },
     mounted() {
