@@ -1,19 +1,29 @@
 <template>
-     <Label dock="left" textWrap="true" height="40" 
-        backgroundImage="~/assets/images/birds.jpg">
-            <FormattedString>
-                Name: {{ anitem.name }}
-            </FormattedString>
-        </Label>
+    <StackLayout>
+
+        <Label flexGrow="1" text="Energy Units"
+              backgroundColor="#41b883"
+              fontSize="20" fontWeight="30" marginBottom="5" marginTop="5"/>
+
+        <Label flexGrow="1" :text="'Cost: ' + item.cost" 
+              fontSize="13" fontWeight="20" marginBottom="5" marginTop="5"/>
+
+        <Label flexGrow="1" :text="'Seller: ' + item.producer.name" 
+              fontSize="13" fontWeight="20" marginBottom="5" marginTop="5"/>
+
+    </StackLayout>
            
 </template>
 
 <script>
 export default {
-    props: ["item"],
+    props: ["store", "item"],
+    mounted() {
+        this.store.commit('settitletext', "Checkout Energy Purchase")
+    },
     data() {
         return {
-            anitem: this.item
+           
         }
     }
 }

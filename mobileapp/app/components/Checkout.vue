@@ -1,17 +1,8 @@
 <template>
-<StackLayout>
-        <Label dock="left" textWrap="true" height="40" 
-        backgroundImage="~/assets/images/birds.jpg">
-            <FormattedString>
-                <Span color="#ffffff" text="Cart Checkout" fontWeight="bold" fontSize="25" />
-            </FormattedString>
-        </Label>
-           
-        <ListView marginLeft="4" for="checkoutitem in checkoutitems" borderRadius="12">
+<StackLayout>        
+        <ListView height="100%" marginLeft="4" for="checkoutitem in checkoutitems" borderRadius="12">
            <v-template>
-               <Span :text="'Seller' + checkoutitem.producer"/>
-               <Span :text="'Cost: $' + checkoutitem.cost"/>
-               <!--<CheckoutItem :item="checkoutitem"/>-->
+               <CheckoutItem :store="store" :item="checkoutitem"/>
             </v-template>
         </ListView>
 
@@ -26,15 +17,15 @@
 </style>
 
 <script>
-//import CheckoutItem from "@/components/CheckoutItem";
+import CheckoutItem from "@/components/CheckoutItem";
 export default {
     props: ["store"],
     components: {
-        //CheckoutItem
+        CheckoutItem
     },
     computed: {
         checkoutitems() {
-            return this.store.state.checkoutitems
+            return this.store.state.cartItems
         }
     }
 };

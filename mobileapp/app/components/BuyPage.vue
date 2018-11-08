@@ -65,6 +65,9 @@ export default {
             units: undefined
         }
     },
+    mounted() {
+        this.store.commit('settitletext', "Purchase Energy Units");
+    },
     computed: {
         cost() {
             return (this.units || 0 ) * this.pricePerKwh

@@ -3,7 +3,7 @@
         <Label dock="left" textWrap="true" height="40" 
         backgroundImage="~/assets/images/birds.jpg">
             <FormattedString>
-                <Span color="#ffffff" text="Energy Producers" fontWeight="bold" fontSize="25" />
+                <Span color="#ffffff" :text="titleText" fontWeight="bold" fontSize="25" />
             </FormattedString>
         </Label>
         
@@ -11,7 +11,8 @@
             <Image dock="right" src="~/assets/images/cart.jpg" stretch="none"/>
         </DockLayout>
         <Button text="Show/Update Producers" @tap="fetchProducers" class="reloadbtn btn btn-info btn-active" />
-        <Button :text="'Go to Cart (' + cartSizeText + ')'" class="reloadbtn btn btn-info btn-active"  
+        <Button v-if="!isCheckoutMode"
+                :text="'Go to Cart (' + cartSizeText + ')'" class="reloadbtn btn btn-info btn-active"  
                 fontSize="12" @tap="gotoCart" />
 
         <FlexboxLayout v-if="isListMode">
@@ -97,11 +98,15 @@ export default {
         },
         cartSizeText() {
             return this.$store.state.cartItems.length
+        },
+        titleText() {
+            return this.$store.state.titleText
         }
     },
     mounted() {
         this.producerService = new ProducerService();
         getProducers(this).then( () => {} );
+        this.$store.commit('settitletext', "Find Energy Producers");
     },
     methods: {
         fetchProducers(args) {

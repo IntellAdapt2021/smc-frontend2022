@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
+      titleText: 'Energy Producers',
       count: 0,
       registeredusers: [],
       buymode: false,
@@ -16,6 +17,7 @@ const store = new Vuex.Store({
       increment: state => state.count++,
       decrement: state => state.count--,
       setcount: (state, newcount) => state.count = newcount,
+      settitletext: (state, text) => state.titleText = text,
       setregisteredusers: (state, newusers) => state.registeredusers = newusers,
       setcheckoutmode: (state, mode) => {
         state.checkoutmode = mode;
